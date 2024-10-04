@@ -106,9 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # Local Link provided by the redis-server command
+        "LOCATION": f"redis://localhost:6379/0",
+        "KEY_PREFIX": "lesson-eight-backend",
         "OPTIONS": {
-            "db": "1",
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
     }
 }
